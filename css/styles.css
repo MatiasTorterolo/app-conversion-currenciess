@@ -1,0 +1,84 @@
+body{
+    
+    background-color: whitesmoke;
+}
+
+.navbar .nav-item .nav-link {
+    
+    transition: all 0.25s ease;
+}
+
+.navbar .nav-item:hover .nav-link {
+    
+    border-radius: 20px;
+    background-color: #03045E;
+    padding: 8px 15px;
+}
+
+.normal-text{
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.italic-text{
+    
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+.custom-color-border{
+    
+    border: 3px solid #158F91 !important;
+}
+
+.divisa-word{
+    
+    color: #023E8A;
+}
+
+.custom-margin{
+    
+    margin: 50px;
+}
+
+.custom-background-color-nav{
+    
+    background-color: #1E2583 !important;
+}
+
+.custom-background-color-footer{
+    
+    background-color: #1E2583 !important;
+}
+
+.custom-color-font-nav{
+    
+    color: #ADE8F4 !important;
+}
+
+.custom-color-font-footer{
+    
+    color: #ADE8F4 !important;
+}
+
+.custom-color-title-font{
+    
+    color: #023E8A;
+}
+
+.custom-color-font-p{
+    
+    color: #484848;
+}
+
+.button-size-exchange{
+    
+    width: 22px; 
+    height: 32px;
+}
+
+.container-size-exchange{
+    
+    width: 45px; 
+    height: 55px;
+}
