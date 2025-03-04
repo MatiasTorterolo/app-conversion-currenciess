@@ -82,3 +82,8 @@ body{
     width: 45px; 
     height: 55px;
 }
+
+.form-select{
+    
+    z-index: 10;
+}
