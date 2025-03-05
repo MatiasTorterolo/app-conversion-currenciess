@@ -26,11 +26,6 @@ body{
     font-style: italic;
 }
 
-.custom-color-border{
-    
-    border: 3px solid #158F91 !important;
-}
-
 .divisa-word{
     
     color: #023E8A;
@@ -86,4 +81,14 @@ body{
 .form-select{
     
     z-index: 10;
+}
+
+.border-color-converter{
+    
+    border-color: #1E2583 !important;
+}
+
+.background-color-converter{
+    
+    background-color: white;
 }

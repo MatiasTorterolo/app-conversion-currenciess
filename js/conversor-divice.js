@@ -27,6 +27,10 @@ async function poblarSelectDivisas() {
         
         selectDesde.addEventListener('change', () => actualizarOpciones(selectDesde, selectA));
         selectA.addEventListener('change', () => actualizarOpciones(selectA, selectDesde));
+        
+        mostrarDivisasSeleccionadas();
+        selectDesde.addEventListener('change', mostrarDivisasSeleccionadas);
+        selectA.addEventListener('change', mostrarDivisasSeleccionadas);
     } catch(error) {
         
         console.error('Error al cargar divisas', error);
@@ -85,8 +89,28 @@ function intercambiarDivisa(event) {
     selectA.value = valueSelectDesde;
     
     convertir();
+    mostrarDivisasSeleccionadas();
 }
-  
+
+function mostrarDivisasSeleccionadas() {
+    
+    const selectDesde = document.getElementById('desde');
+    const selectA = document.getElementById('a');
+    
+    const desde1 = document.getElementById('desde1');
+    const desde2 = document.getElementById('desde2');
+    
+    console.log("llega" + selectDesde.value);
+    const a1 = document.getElementById('a1');
+    const a2 = document.getElementById('a2');
+    
+    desde1.innerText = selectDesde.value;
+    a1.innerText = selectA.value;
+    
+    desde2.innerText = selectA.value;
+    a2.innerText = selectDesde.value;
+}
+
 document.getElementById('desde').addEventListener('change', convertir);
 document.getElementById('a').addEventListener('change', convertir);
 document.getElementById('importe').addEventListener('input', convertir);
