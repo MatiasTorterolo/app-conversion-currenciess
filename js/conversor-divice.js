@@ -31,6 +31,10 @@ async function poblarSelectDivisas() {
         mostrarDivisasSeleccionadas();
         selectDesde.addEventListener('change', mostrarDivisasSeleccionadas);
         selectA.addEventListener('change', mostrarDivisasSeleccionadas);
+        
+        convertirDivisasSeleccionadas();
+        selectDesde.addEventListener('change', convertirDivisasSeleccionadas);
+        selectA.addEventListener('change', convertirDivisasSeleccionadas);
     } catch(error) {
         
         console.error('Error al cargar divisas', error);
@@ -90,6 +94,7 @@ function intercambiarDivisa(event) {
     
     convertir();
     mostrarDivisasSeleccionadas();
+    convertirDivisasSeleccionadas();
 }
 
 function mostrarDivisasSeleccionadas() {
@@ -97,18 +102,84 @@ function mostrarDivisasSeleccionadas() {
     const selectDesde = document.getElementById('desde');
     const selectA = document.getElementById('a');
     
-    const desde1 = document.getElementById('desde1');
-    const desde2 = document.getElementById('desde2');
+    const pDesde1 = document.querySelectorAll('.desde1');
+    const pA1 = document.querySelectorAll('.a1');
     
-    console.log("llega" + selectDesde.value);
-    const a1 = document.getElementById('a1');
-    const a2 = document.getElementById('a2');
+    const pDesde2 = document.querySelectorAll('.desde2');
+    const pA2 = document.querySelectorAll('.a2');
     
-    desde1.innerText = selectDesde.value;
-    a1.innerText = selectA.value;
+    pDesde1.innerText = selectDesde.value;
+    pA1.innerText = selectA.value;
     
-    desde2.innerText = selectA.value;
-    a2.innerText = selectDesde.value;
+    pDesde2.innerText = selectA.value;
+    pA2.innerText = selectDesde.value;
+    
+    pDesde1.forEach(span => span.innerText = selectDesde.value);
+    pA1.forEach(span => span.innerText = selectA.value);
+    
+    pDesde2.forEach(span => span.innerText = selectA.value);
+    pA2.forEach(span => span.innerText = selectDesde.value);
+}
+
+async function convertirDivisasSeleccionadas() {
+    
+    const valores = [1, 10, 100, 1000, 10000];
+    
+    const selectDesde = document.getElementById('desde');
+    const selectA = document.getElementById('a');
+    const resultadosLista1 = document.querySelectorAll('.resultado-lista1');
+    const resultadosLista2 = document.querySelectorAll('.resultado-lista2');
+    
+    const desde = selectDesde.value;
+    const a = selectA.value;
+    
+    for(let i = 0; i < valores.length; i++) {
+        
+        try {
+            
+            const resultado = await conversorDivisaSeleccionada(desde, a, valores[i]);
+            resultadosLista1[i].innerText = resultado;
+        } catch(error) {
+            
+            console.error('Error: ', error);
+        }
+    }
+    
+    for(let i = 0; i < valores.length; i++) {
+        
+        try {
+            
+            const resultado = await conversorDivisaSeleccionada(a, desde, valores[i]);
+            resultadosLista2[i].innerText = resultado;
+        } catch(error) {
+            
+            console.error('Error: ', error);
+        }
+    }
+    
+    
+}
+
+async function conversorDivisaSeleccionada(desde, a, monto) {
+    
+    try {
+        
+        const response = await fetch(`https://api.frankfurter.dev/v1/latest?base=${desde}&symbols=${a}`);
+        const data = await response.json();
+        
+        if(response.ok && data.rates[a]) {
+            
+            const montoConvertido = (monto * data.rates[a]).toFixed(2);
+            return montoConvertido;
+        } else {
+            
+            console.log('Error');
+        }
+        
+    } catch(error) {
+        
+        console.error('Error: ', error);
+    }
 }
 
 document.getElementById('desde').addEventListener('change', convertir);

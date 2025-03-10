@@ -26,20 +26,31 @@
                     <select class='form-select' id='a'></select>
                 </div>
                 
-                <span class='col-4 d-flex align-items-center justify-content-center mt-3' id='resultado'></span>
+                <span class='col-4 d-flex align-items-center justify-content-center mt-3 custom-color-font-p' id='resultado'></span>
             </div>
         </form>
         
         <div class='row justify-content-between p-4 clearfix border-color-converter rounded-3 background-color-converter'>
-            <div class='col-5 justify-content-center d-flex border border-3 border-color-converter rounded-3 background-color-converter'>
-                <h2 class='fs-1 italic-text text-center custom-color-title-font'>Convertir <span id='desde1'></span> a <span id='a1'></span></h2>
+            <div class='col-5 justify-content-center d-flex flex-column border border-3 border-color-converter rounded-3 background-color-converter'>
+                <h2 class='fs-1 italic-text text-center custom-color-title-font'>Convertir <span class='desde1'></span> a <span class='a1'></span></h2>
+                
+                <p class='text-center italic-text custom-color-font-p'>1 <span class='desde1'></span> son  <span class='resultado-lista1'></span> <span class='a1'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>10 <span class='desde1'></span> son <span class='resultado-lista1'></span> <span class='a1'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>100 <span class='desde1'></span> son <span class='resultado-lista1'></span> <span class='a1'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>1.000 <span class='desde1'></span> son <span class='resultado-lista1'></span> <span class='a1'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>10.000 <span class='desde1'></span> son <span class='resultado-lista1'></span> <span class='a1'></span></p>
             </div>
             
-            <div class='col-2'>
+            <div class='col-2'></div>
+            
+            <div class='col-5 justify-content-center d-flex flex-column border border-3 border-color-converter rounded-3 background-color-converter'>
+                <h2 class='fs-1 italic-text text-center custom-color-title-font'>Convertir <span class='desde2'></span> a <span class='a2'></span></h2>
                 
-            </div>
-            <div class='col-5 justify-content-center d-flex border border-3 border-color-converter rounded-3 background-color-converter'>
-                <h2 class='fs-1 italic-text text-center custom-color-title-font'>Convertir <span id='desde2'></span> a <span id='a2'></span></h2>
+                <p class='text-center italic-text custom-color-font-p'>1 <span class='desde2'></span> son <span class='resultado-lista2'></span> <span class='a2'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>10 <span class='desde2'></span> son <span class='resultado-lista2'></span> <span class='a2'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>100 <span class='desde2'></span> son <span class='resultado-lista2'></span> <span class='a2'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>1.000 <span class='desde2'></span> son <span class='resultado-lista2'></span> <span class='a2'></span></p>
+                <p class='text-center italic-text custom-color-font-p'>10.000 <span class='desde2'></span> son <span class='resultado-lista2'></span> <span class='a2'></span></p>
             </div>
         </div>
     </div>
