@@ -1,5 +1,9 @@
-<footer class='py-3 mt-auto custom-background-color-footer'>
-    <div class='container'>footer</div>
+<footer class='custom-background-color-footer'>
+    <div class='container d-flex justify-content-center'>
+        <p class='p-3 custom-color-font-footer mb-0'>
+            Desarrollado por Matias Torterolo Ambrosini &copy; 2025
+        </p>
+    </div>
 </footer>
         
         

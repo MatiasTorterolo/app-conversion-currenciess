@@ -92,3 +92,8 @@ body{
     
     background-color: white;
 }
+
+.text-multiline{
+    
+    white-space: pre-line;
+}

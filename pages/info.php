@@ -9,7 +9,7 @@
                     Una divisa es una moneda extranjera utilizada en transacciones internacionales. Es el término que se emplea para referirse a la moneda de otro país, que se utiliza en intercambios financieros y comerciales fuera de las fronteras de su país de origen. Por ejemplo, el dólar estadounidense (USD), el euro (EUR) y el yen japonés (JPY) son divisas.
                 </p>
             </div>
-            <div class='col-2'>
+            <div class='col-2 mt-5'>
                 <img src='../assets/images/divisa.png' class='img-fluid'/>
             </div>
         </div>

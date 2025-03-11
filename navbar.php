@@ -1,4 +1,4 @@
-<nav class='navbar bg-body-tertiary normal-text custom-background-color-nav'> 
+<nav class='navbar bg-body-tertiary normal-text custom-background-color-nav fixed-top'> 
     <div class='container-fluid'>
         <a class='navbar-brand custom-color-font-nav' href='http://localhost/app-conversion-currencies/home.php'>Conversion Currencies</a>
 
